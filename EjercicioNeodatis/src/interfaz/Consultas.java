@@ -27,6 +27,12 @@ import org.neodatis.odb.impl.core.query.values.ValuesCriteriaQuery;
 
 import javax.swing.border.CompoundBorder;
 
+/**
+ * 
+ * <h2> Esta clase se encarga de realizar consultas estadísticas de empleados y departamentos. También obtiene un listado de empleados y un listado de departamentos. </h2>
+ *
+ */
+
 @SuppressWarnings("serial")
 public class Consultas extends JDialog implements ActionListener  {
 
@@ -37,6 +43,7 @@ public class Consultas extends JDialog implements ActionListener  {
 	JButton btnEstadDepar = new JButton("Estadisticas departamentos");
 	JButton btnEstadEmple = new JButton("Estadisticas empleados");
 	private ODB odb =null;
+	private String bBDD;
 	
 	public Consultas() {
 		setTitle("CONSULTAS A LA BD");
@@ -91,8 +98,8 @@ public class Consultas extends JDialog implements ActionListener  {
 public void actionPerformed(ActionEvent e) 
 {   
 	
-	String BBDD="Empleados.dat";
-	odb = ODBFactory.open(BBDD);
+	bBDD = "Empleados.dat";
+	odb = ODBFactory.open(bBDD);
 	
     if (e.getSource() == btnDepar) { consuldepart();  	}
 	
